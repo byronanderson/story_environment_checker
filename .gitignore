@@ -1,3 +1,4 @@
+.powrc
 config.yml
 environments/*
 !environments/example_environment.rb
