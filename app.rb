@@ -3,6 +3,8 @@ require 'json'
 require 'yaml'
 require './environment_checker'
 
+$environments = []
+Dir["environments/*.rb"].each {|file| require file }
 
 class App < Sinatra::Base
   get '/check_envs/:story_id' do
@@ -17,7 +19,7 @@ class App < Sinatra::Base
   end
 
   def environments
-    [Struct.new(:name, :deployed_sha).new('test', 'c8deb3cb582eb1218d8ae35f6d107036d5a81b6c')]
+    $environments
   end
 
   def repo

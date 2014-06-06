@@ -13,6 +13,11 @@ These are the pre-requisites for running the server:
 * A local copy of the repository your environments are using to compare against
 * configuration to point to this repository in `config.yml`, see the example in
   `config.yml.example`
+* Ruby files inside the directory `environments` that append to the global
+  variable `$environments` the environments that need to be 
+
+To be a valid environment, the environment needs to have a '#name' and a
+`#deployed_sha`
 
 Once you have done this, run this command:
 
