@@ -4,7 +4,7 @@ require 'yaml'
 require './environment_checker'
 
 $environments = []
-Dir["environments/*.rb"].each {|file| require file }
+Dir["environments/*.rb"].each {|file| load file }
 
 class App < Sinatra::Base
   get '/check_envs/:story_id' do
